@@ -3,8 +3,8 @@ package testing_in_go
 import "testing"
 
 // sub benchmark is like sub test you can use b.Run() and then write your benchmark
-func TestSubTestTableMyFunc(t *testing.T) {
-	test := [...]struct {
+func BenchmarkSubMyFunc(b *testing.B) {
+	benchmark := [...]struct {
 		id   int
 		name string
 	}{
@@ -21,9 +21,11 @@ func TestSubTestTableMyFunc(t *testing.T) {
 			name: "setiawan",
 		},
 	}
-	for _, val := range test {
-		t.Run(val.name, func(t *testing.T) {
-			MyFunc()
+	for _, val := range benchmark {
+		b.Run(val.name, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				MyFunc()
+			}
 		})
 	}
 }

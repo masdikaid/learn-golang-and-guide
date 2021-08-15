@@ -1,10 +1,10 @@
 package main
 
 import (
-	testingingo "belajarGo/testing_in_go"
+	"belajarGo/testing_in_go"
 	"fmt"
 )
 
 func main() {
-	fmt.Println(testingingo.MyFunc())
+	fmt.Println(testing_in_go.MyFunc())
 }

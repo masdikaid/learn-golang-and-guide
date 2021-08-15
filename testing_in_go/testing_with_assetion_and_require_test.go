@@ -1,4 +1,4 @@
-package testingingo
+package testing_in_go
 
 import (
 	"fmt"
